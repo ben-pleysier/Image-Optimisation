@@ -1,0 +1,42 @@
+<!-- Wappler include head-page="layouts/main" fontawesome_5="cdn" bootstrap5="local" is="dmx-app" id="imageswebp" appConnect="local" components="{dmxLightbox:{},dmxBrowser:{},dmxFormatter:{}}" -->
+<meta name="ac:route" content="/final">
+
+<!-- Preload the LCP image with a high fetchpriority so it starts loading with the stylesheet. -->
+<link rel="preconnect" href="https://ik.imagekit.io">
+<link rel="preload" fetchpriority="high" as="image" href="https://ik.imagekit.io/wappler/tr:w-155/5.jpg" type="image/webp">
+<link rel="preload" fetchpriority="high" as="image" href="https://ik.imagekit.io/wappler/tr:w-255/5.jpg" type="image/webp">
+
+<dmx-serverconnect id="scReadImages" url="/api/images/read"></dmx-serverconnect>
+<div is="dmx-browser" id="browser"></div>
+
+<div class="container">
+    <div class="row mb-4">
+        <div class="col">
+            <h1>Final</h1>
+        </div>
+    </div>
+    <div class="row gx-2 gy-2 mb-4 row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6" is="dmx-repeat" id="repeatImages1" dmx-bind:repeat="scReadImages.data.query">
+        <div class="col">
+            <div id="conditional_sm_1" is="dmx-if" dmx-bind:condition="((browser.viewport.width &lt; 769) &amp;&amp; (browser.device.pixelRatio == 1))">
+                <a dmx-bind:href="'https://ik.imagekit.io/wappler/tr:w-350/'+image" dmx-lightbox:gallery="gallery">
+                    <img dmx-bind:src="'https://ik.imagekit.io/wappler/tr:w-155/'+image" class="img-fluid" width="300" height="200" dmx-bind:alt="image_alt">
+                </a>
+            </div>
+            <div id="conditional_sm_2" is="dmx-if" dmx-bind:condition="((browser.viewport.width &lt; 769) &amp;&amp; (browser.device.pixelRatio &gt;= 2))">
+                <a dmx-bind:href="'https://ik.imagekit.io/wappler/tr:w-350/'+image" dmx-lightbox:gallery="gallery">
+                    <img dmx-bind:src="'https://ik.imagekit.io/wappler/tr:w-255/'+image" class="img-fluid" width="300" height="200" dmx-bind:alt="image_alt">
+                </a>
+            </div>
+            <div id="conditional_md" is="dmx-if" dmx-bind:condition="((browser.viewport.width &gt;= 769) &amp;&amp; (browser.viewport.width &lt;= 992))">
+                <a dmx-bind:href="'https://ik.imagekit.io/wappler/tr:w-900/'+image" dmx-lightbox:gallery="gallery">
+                    <img dmx-bind:src="'https://ik.imagekit.io/wappler/tr:w-255/'+image" class="img-fluid" width="300" height="200" dmx-bind:alt="image_alt">
+                </a>
+            </div>
+            <div id="conditional_lg" is="dmx-if" dmx-bind:condition="(browser.viewport.width &gt; 992)">
+                <a dmx-bind:href="'https://ik.imagekit.io/wappler/tr:w-1400/'+image" dmx-lightbox:gallery="gallery">
+                    <img dmx-bind:src="'https://ik.imagekit.io/wappler/tr:w-255/'+image" class="img-fluid" width="300" height="200" dmx-bind:alt="image_alt">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

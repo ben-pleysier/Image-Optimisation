@@ -1,0 +1,39 @@
+{
+  "routes": [
+    {
+      "path": "/",
+      "page": "index",
+      "layout": "main-optimised"
+    },
+    {
+      "path": "/original",
+      "page": "original",
+      "layout": "main-optimised"
+    },
+    {
+      "path": "/thumbs",
+      "page": "thumbs",
+      "layout": "main-optimised"
+    },
+    {
+      "path": "/preloaded",
+      "page": "preloaded",
+      "layout": "main-optimised"
+    },
+    {
+      "path": "/cdn-original",
+      "page": "cdn-original",
+      "layout": "main-optimised"
+    },
+    {
+      "path": "/resized",
+      "page": "resized",
+      "layout": "main-optimised"
+    },
+    {
+      "path": "/final",
+      "page": "final",
+      "layout": "main-optimised"
+    }
+  ]
+}

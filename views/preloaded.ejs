@@ -1,0 +1,22 @@
+<!-- Wappler include head-page="layouts/main" fontawesome_5="cdn" bootstrap5="local" is="dmx-app" id="preload" appConnect="local" components="{dmxLightbox:{}}" -->
+<meta name="ac:route" content="/preloaded">
+
+<!-- Preload the LCP image with a high fetchpriority so it starts loading with the stylesheet. -->
+<link rel="preload" fetchpriority="high" as="image" href="/assets/images/original/thumbs/1.jpg" type="image/jpg">
+
+<dmx-serverconnect id="scReadImages" url="/api/images/read"></dmx-serverconnect>
+
+<div class="container">
+    <div class="row mb-4">
+        <div class="col">
+            <h1>Preload</h1>
+        </div>
+    </div>
+    <div class="row gx-2 gy-2 mb-4 row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6" is="dmx-repeat" id="repeatImages" dmx-bind:repeat="scReadImages.data.query">
+        <div class="col">
+            <a dmx-bind:href="'/assets/images/original/'+image" dmx-lightbox:gallery="gallery">
+                <img dmx-bind:src="'/assets/images/original/thumbs/'+image" class="img-fluid" width="300" height="200" dmx-bind:alt="image_alt">
+            </a>
+        </div>
+    </div>
+</div>

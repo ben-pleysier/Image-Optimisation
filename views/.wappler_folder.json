@@ -1,0 +1,38 @@
+{
+  "original.ejs": {
+    "layoutPage": "main-optimised",
+    "description": ""
+  },
+  "final.ejs": {
+    "layoutPage": "main-optimised",
+    "description": ""
+  },
+  "thumbs.ejs": {
+    "layoutPage": "main-optimised",
+    "description": ""
+  },
+  "preloaded.ejs": {
+    "layoutPage": "main-optimised",
+    "description": ""
+  },
+  "image-preload.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "cdn-original.ejs": {
+    "layoutPage": "main-optimised",
+    "description": ""
+  },
+  "resized.ejs": {
+    "layoutPage": "main-optimised",
+    "description": ""
+  },
+  "index-optimised.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "index.ejs": {
+    "layoutPage": "main-optimised",
+    "description": ""
+  }
+}

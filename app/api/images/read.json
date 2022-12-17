@@ -1,0 +1,63 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "query",
+      "module": "dbconnector",
+      "action": "select",
+      "options": {
+        "connection": "db",
+        "sql": {
+          "type": "SELECT",
+          "columns": [
+            {
+              "table": "images",
+              "column": "*"
+            }
+          ],
+          "params": [],
+          "table": {
+            "name": "images"
+          },
+          "primary": "id",
+          "joins": [],
+          "orders": [
+            {
+              "table": "images",
+              "column": "image_index",
+              "direction": "ASC"
+            }
+          ],
+          "query": "SELECT *\nFROM images\nORDER BY image_index ASC"
+        }
+      },
+      "output": true,
+      "meta": [
+        {
+          "type": "number",
+          "name": "id"
+        },
+        {
+          "type": "text",
+          "name": "image"
+        },
+        {
+          "type": "number",
+          "name": "image_index"
+        }
+      ],
+      "outputType": "array"
+    }
+  }
+}
